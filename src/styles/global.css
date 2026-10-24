@@ -1,0 +1,223 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  background: 
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(82, 28, 59, 0.45), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 90% 40%, rgba(67, 27, 48, 0.3), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 10% 70%, rgba(82, 28, 59, 0.25), transparent 60%),
+    linear-gradient(180deg, var(--bg-primary) 0%, #1a0715 50%, var(--bg-primary) 100%);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.6;
+}
+
+/* Custom romantic scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--wine);
+  border-radius: 4px;
+  border: 1px solid var(--border-soft);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pink-primary);
+}
+
+/* Base selection styling */
+::selection {
+  background: var(--pink-primary);
+  color: var(--bg-primary);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Universal Section Layout */
+.section-wrapper {
+  position: relative;
+  padding: 7rem 0 6rem;
+  width: 100%;
+  z-index: 2;
+}
+
+/* Pill Badges from Stitch Design */
+.stitch-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.38rem 1.1rem;
+  border-radius: 9999px;
+  background: rgba(39, 12, 30, 0.7);
+  border: 1px solid var(--border-gold);
+  color: var(--gold-light);
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 15px rgba(216, 173, 101, 0.1);
+  margin-bottom: 1.25rem;
+}
+
+.stitch-badge.badge-pink {
+  border-color: var(--border-soft);
+  color: var(--pink-soft);
+  box-shadow: 0 0 15px rgba(233, 163, 186, 0.1);
+}
+
+/* Section Header Typography */
+.section-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 3.5rem;
+  position: relative;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.2vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.18;
+  color: var(--text-primary);
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.01em;
+}
+
+.section-title .italic-accent {
+  font-family: var(--font-romantic);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold-light);
+  text-shadow: 0 0 18px rgba(216, 173, 101, 0.3);
+}
+
+.section-title .pink-accent {
+  font-family: var(--font-romantic);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--pink-soft);
+  text-shadow: 0 0 18px rgba(244, 181, 202, 0.35);
+}
+
+.section-subtitle {
+  font-family: var(--font-romantic);
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-style: italic;
+  color: var(--pink-soft);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.01em;
+}
+
+.section-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.85rem 2.2rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #e9a3ba 0%, #c9658a 50%, #872e54 100%);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 28px rgba(201, 101, 138, 0.4), 0 0 20px rgba(233, 163, 186, 0.45);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 14px 34px rgba(201, 101, 138, 0.6), 0 0 30px rgba(233, 163, 186, 0.65);
+}
+
+.btn-primary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.35rem;
+  border-radius: 9999px;
+  background: rgba(39, 12, 30, 0.85);
+  border: 1px solid var(--border-gold);
+  color: var(--gold-light);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(8px);
+}
+
+.btn-pill:hover {
+  background: rgba(67, 27, 48, 0.9);
+  border-color: var(--gold);
+  transform: translateY(-1px);
+  box-shadow: 0 0 18px var(--gold-glow);
+}
+
+/* Floating Ambient Stars & Particles */
+.ambient-particles-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Accessibility reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

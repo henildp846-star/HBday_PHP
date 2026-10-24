@@ -1,0 +1,60 @@
+:root {
+  /* Stitch Color Palette */
+  --bg-primary: #150611;
+  --bg-secondary: #210a1b;
+  --bg-card: #270c1e;
+  --bg-card-hover: #311027;
+  --wine: #3c142b;
+  --wine-light: #521c3b;
+  --wine-deep: #1b0714;
+
+  /* Romantic Pink Accents */
+  --pink-primary: #e9a3ba;
+  --pink-soft: #f4b5ca;
+  --pink-light: #fce7ef;
+  --pink-glow: rgba(233, 163, 186, 0.35);
+  --pink-glow-strong: rgba(233, 163, 186, 0.6);
+
+  /* Warm Champagne Gold */
+  --gold: #d8ad65;
+  --gold-light: #f3d79e;
+  --gold-glow: rgba(216, 173, 101, 0.32);
+
+  /* Typography Colors */
+  --text-primary: #fff4ee;
+  --text-secondary: #c9acbd;
+  --text-muted: #9c8091;
+  --text-dark: #2a0e20;
+
+  /* Polaroid Styling */
+  --polaroid-paper: #fff8f0;
+  --polaroid-shadow: 0 16px 36px rgba(0, 0, 0, 0.65), 0 0 25px rgba(233, 163, 186, 0.12);
+  --polaroid-hover-shadow: 0 24px 50px rgba(0, 0, 0, 0.8), 0 0 35px rgba(233, 163, 186, 0.28);
+  --tape-color: rgba(255, 230, 236, 0.55);
+
+  /* Borders */
+  --border-soft: rgba(244, 181, 202, 0.14);
+  --border-medium: rgba(244, 181, 202, 0.26);
+  --border-gold: rgba(216, 173, 101, 0.28);
+  --border-gold-bright: rgba(216, 173, 101, 0.65);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(27, 8, 21, 0.72);
+  --glass-border: rgba(244, 181, 202, 0.16);
+
+  /* Font Families */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-romantic: 'Cormorant Garamond', Georgia, serif;
+  --font-script: 'Great Vibes', 'Brush Script MT', cursive;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Layout */
+  --container-max: 1200px;
+  --navbar-height: 72px;
+}

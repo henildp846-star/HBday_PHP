@@ -1,0 +1,287 @@
+/* Floating Navbar */
+.navbar-wrapper {
+  position: fixed;
+  top: 1.25rem;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+  pointer-events: none;
+}
+
+.navbar-inner {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: rgba(26, 8, 20, 0.78);
+  border: 1px solid var(--border-soft);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 0.55rem 1.4rem 0.55rem 0.85rem;
+  border-radius: 9999px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(233, 163, 186, 0.08);
+  max-width: 1220px;
+  width: auto;
+  transition: all var(--transition-normal);
+}
+
+.navbar-scrolled {
+  background: rgba(22, 6, 17, 0.92);
+  border-color: rgba(244, 181, 202, 0.28);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.65), 0 0 25px rgba(233, 163, 186, 0.15);
+}
+
+/* Navbar Brand */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+.nav-brand-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #5a1d3a, #280b1e);
+  border: 1px solid var(--border-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-light);
+  box-shadow: 0 0 10px var(--gold-glow);
+  font-size: 0.9rem;
+}
+
+.nav-brand-text {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+.nav-brand-title {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+}
+
+.nav-brand-script {
+  font-family: var(--font-script);
+  font-size: 1.25rem;
+  color: var(--pink-soft);
+  transform: translateY(2px);
+  text-shadow: 0 0 10px var(--pink-glow);
+}
+
+/* Nav Links - Desktop */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  list-style: none;
+}
+
+.nav-link-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0.35rem 0.45rem;
+  border-radius: 6px;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.nav-link-btn:hover {
+  color: var(--text-primary);
+  text-shadow: 0 0 10px var(--pink-glow);
+}
+
+.nav-link-btn.active {
+  color: var(--pink-soft);
+  position: relative;
+}
+
+.nav-link-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: var(--pink-soft);
+  border-radius: 9999px;
+  box-shadow: 0 0 8px var(--pink-primary);
+}
+
+/* Music Control Pill */
+.nav-music-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.4rem 0.95rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgba(67, 27, 48, 0.7), rgba(42, 14, 30, 0.9));
+  border: 1px solid var(--border-soft);
+  color: var(--text-primary);
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  flex-shrink: 0;
+}
+
+.nav-music-pill:hover {
+  border-color: var(--pink-primary);
+  box-shadow: 0 0 18px var(--pink-glow);
+  transform: scale(1.02);
+}
+
+.nav-music-pill.playing {
+  border-color: var(--pink-soft);
+  background: linear-gradient(135deg, rgba(82, 28, 59, 0.85), rgba(50, 16, 36, 0.95));
+  box-shadow: 0 0 18px var(--pink-glow);
+}
+
+.nav-music-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-light);
+  font-size: 0.75rem;
+}
+
+.nav-music-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.nav-music-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.nav-music-action {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--pink-soft);
+}
+
+/* Sound Wave animation */
+.sound-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 12px;
+}
+
+.sound-bar {
+  width: 2px;
+  background: var(--pink-soft);
+  border-radius: 1px;
+  animation: equalize 1s ease-in-out infinite alternate;
+}
+
+.sound-bar:nth-child(2) { animation-delay: 0.2s; height: 8px; }
+.sound-bar:nth-child(3) { animation-delay: 0.4s; height: 12px; }
+.sound-bar:nth-child(4) { animation-delay: 0.1s; height: 6px; }
+
+@keyframes equalize {
+  0% { height: 3px; }
+  100% { height: 12px; }
+}
+
+/* Mobile Hamburger */
+.nav-mobile-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0.3rem;
+  margin-left: 0.5rem;
+}
+
+/* Mobile Navigation Overlay / Drawer */
+.mobile-nav-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 2, 8, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-nav-content {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.mobile-nav-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(42, 14, 30, 0.8);
+  border: 1px solid var(--border-soft);
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.mobile-nav-link-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.mobile-nav-link-btn:hover,
+.mobile-nav-link-btn.active {
+  color: var(--pink-soft);
+  text-shadow: 0 0 15px var(--pink-glow);
+}

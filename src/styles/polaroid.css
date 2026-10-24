@@ -1,0 +1,298 @@
+/* Polaroid Card Scrapbook Styles */
+.polaroid-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.5rem 2.5rem;
+  padding: 1rem 0 3rem;
+  position: relative;
+}
+
+@media (min-width: 921px) {
+  .memory-item-center {
+    grid-column: 2;
+  }
+}
+
+.polaroid-card-wrapper {
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+}
+
+.polaroid-card {
+  background: var(--polaroid-paper);
+  border-radius: 4px;
+  padding: 1rem 1rem 1.6rem 1rem;
+  box-shadow: var(--polaroid-shadow);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  cursor: pointer;
+  width: 100%;
+  max-width: 340px;
+  position: relative;
+  transform-origin: center center;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.polaroid-card:hover {
+  transform: translateY(-8px) scale(1.03) rotate(0deg) !important;
+  box-shadow: var(--polaroid-hover-shadow);
+  z-index: 10;
+}
+
+/* Washi Tape at Top */
+.polaroid-tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 24px;
+  background: rgba(255, 235, 242, 0.65);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 5;
+  border-radius: 1px;
+}
+
+/* Inner Photo Container */
+.polaroid-inner {
+  width: 100%;
+  aspect-ratio: 1 / 1.05;
+  background: #1c0716;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.polaroid-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  transition: transform 0.5s ease;
+}
+
+.polaroid-card:hover .polaroid-img {
+  transform: scale(1.04);
+}
+
+/* Fallback Placeholder State */
+.polaroid-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: radial-gradient(circle at 50% 40%, #2e0d22, #170512);
+  text-align: center;
+  position: relative;
+}
+
+.placeholder-asset-pill {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  background: rgba(45, 14, 32, 0.9);
+  border: 1px solid var(--border-gold);
+  color: var(--gold-light);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
+
+.placeholder-icon-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(233, 163, 186, 0.2), rgba(39, 12, 30, 0.8));
+  border: 1px solid var(--border-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 0.85rem;
+  box-shadow: 0 0 16px var(--pink-glow);
+}
+
+.placeholder-title {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.placeholder-slot {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* Polaroid Caption on Ivory Paper */
+.polaroid-caption-area {
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.polaroid-caption {
+  font-family: var(--font-script);
+  font-size: 1.65rem;
+  line-height: 1.2;
+  color: var(--text-dark);
+  margin-bottom: 0.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+.polaroid-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #7b586c;
+}
+
+/* Photo Lightbox Modal */
+.lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 2, 9, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 680px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-frame {
+  background: var(--polaroid-paper);
+  border-radius: 6px;
+  padding: 1.25rem 1.25rem 2rem;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), 0 0 40px var(--pink-glow);
+  width: 100%;
+  max-width: 520px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  position: relative;
+}
+
+.lightbox-img-box {
+  width: 100%;
+  aspect-ratio: 1 / 1.05;
+  background: #1a0514;
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.lightbox-caption-box {
+  padding-top: 1.25rem;
+  text-align: center;
+}
+
+.lightbox-caption {
+  font-family: var(--font-script);
+  font-size: 2.1rem;
+  color: var(--text-dark);
+}
+
+.lightbox-sub {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #724f64;
+  margin-top: 0.2rem;
+}
+
+/* Lightbox Controls */
+.lightbox-close-btn {
+  position: absolute;
+  top: -3.5rem;
+  right: 0;
+  background: rgba(45, 14, 32, 0.85);
+  border: 1px solid var(--border-soft);
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.lightbox-close-btn:hover {
+  background: var(--wine-light);
+  transform: scale(1.1);
+}
+
+.lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(39, 12, 30, 0.85);
+  border: 1px solid var(--border-soft);
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(8px);
+}
+
+.lightbox-nav-btn:hover {
+  background: var(--wine-light);
+  border-color: var(--pink-primary);
+  box-shadow: 0 0 20px var(--pink-glow);
+}
+
+.lightbox-nav-btn.prev {
+  left: -4rem;
+}
+
+.lightbox-nav-btn.next {
+  right: -4rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
