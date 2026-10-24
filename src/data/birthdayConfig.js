@@ -70,5 +70,5 @@ export const birthdayConfig = {
     replayBtn: "Experience Our Story Again ❤️"
   },
 
-  musicSrc: "/audio/romantic-melody.mp3"
+  musicSrc: `${import.meta.env.BASE_URL}audio/romantic-melody.mp3`
 };

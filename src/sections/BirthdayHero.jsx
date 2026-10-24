@@ -14,7 +14,7 @@ export default function BirthdayHero({ onOpenLightbox }) {
 
   const heroPhoto = {
     ...photos[0],
-    src: "/images/hero-portrait.jpg"
+    src: `${import.meta.env.BASE_URL}images/hero-portrait.jpg`
   };
 
   useEffect(() => {

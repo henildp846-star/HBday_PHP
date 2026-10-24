@@ -1,7 +1,9 @@
+const base = import.meta.env.BASE_URL;
+
 export const photos = [
   {
     id: "PHOTO_01",
-    src: "/images/photo-01.jpg",
+    src: `${base}images/photo-01.jpg`,
     title: "Quiet Sweet Moments",
     slotLabel: "[Photo Slot 01]",
     heroSlotLabel: "[Main Birthday Portrait]",
@@ -14,7 +16,7 @@ export const photos = [
   },
   {
     id: "PHOTO_02",
-    src: "/images/photo-02.jpg",
+    src: `${base}images/photo-02.jpg`,
     title: "Temple Blessings & Grace",
     slotLabel: "[Photo Slot 02]",
     caption: "Pure & Divine ❤️",
@@ -25,7 +27,7 @@ export const photos = [
   },
   {
     id: "PHOTO_03",
-    src: "/images/photo-03.jpg",
+    src: `${base}images/photo-03.jpg`,
     title: "Golden Radiance & Style",
     slotLabel: "[Photo Slot 03]",
     caption: "My Golden Girl ✨",
@@ -36,7 +38,7 @@ export const photos = [
   },
   {
     id: "PHOTO_04",
-    src: "/images/photo-04.jpg",
+    src: `${base}images/photo-04.jpg`,
     title: "Late Night Video Calls",
     slotLabel: "[Photo Slot 04]",
     caption: "Our Silly Giggles 😂❤️",
@@ -47,7 +49,7 @@ export const photos = [
   },
   {
     id: "PHOTO_05",
-    src: "/images/photo-05.jpg",
+    src: `${base}images/photo-05.jpg`,
     title: "Traditional Splendor",
     slotLabel: "[Photo Slot 05]",
     caption: "The Girl Who Stole My Heart ❤️",
@@ -58,7 +60,7 @@ export const photos = [
   },
   {
     id: "PHOTO_06",
-    src: "/images/photo-06.jpg",
+    src: `${base}images/photo-06.jpg`,
     title: "Uncontrollable Laughter",
     slotLabel: "[Photo Slot 06]",
     caption: "That Priceless Laugh 💖",
@@ -69,7 +71,7 @@ export const photos = [
   },
   {
     id: "PHOTO_07",
-    src: "/images/photo-07.jpg",
+    src: `${base}images/photo-07.jpg`,
     title: "Sweetest Video Call Moments",
     slotLabel: "[Photo Slot 07]",
     caption: "Just Seeing Your Face ❤️",
@@ -80,7 +82,7 @@ export const photos = [
   },
   {
     id: "PHOTO_08",
-    src: "/images/photo-08.jpg",
+    src: `${base}images/photo-08.jpg`,
     title: "Carefree On The Swing",
     slotLabel: "[Photo Slot 08]",
     caption: "Forever Young & Free 🌿",
@@ -91,7 +93,7 @@ export const photos = [
   },
   {
     id: "PHOTO_09",
-    src: "/images/photo-09.jpg",
+    src: `${base}images/photo-09.jpg`,
     title: "Festive Chandan Art",
     slotLabel: "[Photo Slot 09]",
     caption: "Goddess-Like Grace ✨",
@@ -102,7 +104,7 @@ export const photos = [
   },
   {
     id: "PHOTO_10",
-    src: "/images/photo-10.jpg",
+    src: `${base}images/photo-10.jpg`,
     title: "Royal Traditional Elegance",
     slotLabel: "[Photo Slot 10]",
     caption: "Forever & Always With You 💍❤️",
